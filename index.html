@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Japanese Word Trainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    #kana {
+      font-size: 80px;
+      margin: 30px;
+    }
+    #romaji, #meaning {
+      font-size: 30px;
+      margin-top: 10px;
+      display: none;
+    }
+    #meaning {
+      color: #00ffcc;
+    }
+    #romaji {
+      color: #ffcc00;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: #333;
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #555;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Japanese Word Trainer</h1>
+  <div id="kana">あおい</div>
+  <div id="romaji">aoi</div>
+  <div id="meaning">biru</div>
+  
+  <button onclick="showRomaji()">Tampilkan Romaji</button>
+  <button onclick="showMeaning()">Tampilkan Arti</button>
+  <button onclick="nextWord()">Next Word</button>
+
+  <footer>
+    By : @ilparataraxia
+  </footer>
+
+  <script>
+    const words = [
+      {kana: "あおい", romaji: "aoi", meaning: "biru"},
+      {kana: "ねこ", romaji: "neko", meaning: "kucing"},
+      {kana: "いぬ", romaji: "inu", meaning: "anjing"},
+      {kana: "すし", romaji: "sushi", meaning: "sushi"},
+      {kana: "みず", romaji: "mizu", meaning: "air"},
+      {kana: "やま", romaji: "yama", meaning: "gunung"},
+      {kana: "かわ", romaji: "kawa", meaning: "sungai"},
+      {kana: "ともだち", romaji: "tomodachi", meaning: "teman"},
+      {kana: "がっこう", romaji: "gakkou", meaning: "sekolah"},
+      {kana: "せんせい", romaji: "sensei", meaning: "guru"},
+      {kana: "にほん", romaji: "nihon", meaning: "jepang"},
+      {kana: "おはよう", romaji: "ohayou", meaning: "selamat pagi"},
+      {kana: "こんばんは", romaji: "konbanwa", meaning: "selamat malam"},
+      {kana: "ありがとう", romaji: "arigatou", meaning: "terima kasih"},
+      {kana: "さようなら", romaji: "sayounara", meaning: "selamat tinggal"},
+      {kana: "だいがく", romaji: "daigaku", meaning: "universitas"},
+      {kana: "えき", romaji: "eki", meaning: "stasiun"},
+      {kana: "きょう", romaji: "kyou", meaning: "hari ini"},
+      {kana: "あした", romaji: "ashita", meaning: "besok"},
+      {kana: "きのう", romaji: "kinou", meaning: "kemarin"},
+      {kana: "ほん", romaji: "hon", meaning: "buku"},
+      {kana: "じしょ", romaji: "jisho", meaning: "kamus"},
+      {kana: "くるま", romaji: "kuruma", meaning: "mobil"},
+      {kana: "でんしゃ", romaji: "densha", meaning: "kereta"},
+      {kana: "やさい", romaji: "yasai", meaning: "sayuran"},
+      {kana: "くだもの", romaji: "kudamono", meaning: "buah"},
+      {kana: "りんご", romaji: "ringo", meaning: "apel"},
+      {kana: "バナナ", romaji: "banana", meaning: "pisang"},
+      {kana: "アイス", romaji: "aisu", meaning: "es krim"},
+      {kana: "ゲーム", romaji: "geemu", meaning: "game"},
+      {kana: "てんき", romaji: "tenki", meaning: "cuaca"},
+      {kana: "はな", romaji: "hana", meaning: "bunga"},
+      {kana: "ひと", romaji: "hito", meaning: "orang"},
+      {kana: "こども", romaji: "kodomo", meaning: "anak-anak"}
+    ];
+
+    function nextWord() {
+      const randomWord = words[Math.floor(Math.random() * words.length)];
+      document.getElementById("kana").textContent = randomWord.kana;
+      document.getElementById("romaji").textContent = randomWord.romaji;
+      document.getElementById("meaning").textContent = randomWord.meaning;
+      document.getElementById("romaji").style.display = "none";
+      document.getElementById("meaning").style.display = "none";
+    }
+
+    function showRomaji() {
+      document.getElementById("romaji").style.display = "block";
+    }
+
+    function showMeaning() {
+      document.getElementById("meaning").style.display = "block";
+    }
+
+    // start pertama langsung random
+    nextWord();
+  </script>
+</body>
+</html>
